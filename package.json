@@ -1,0 +1,27 @@
+{
+  "name": "qrurl",
+  "version": "1.0.14",
+  "description": "Generates qr code of the current page for quick share to other devices",
+  "main": "qrurl.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skyofdust/qrurl.git"
+  },
+  "keywords": [
+    "share",
+    "qr",
+    "url",
+    "scan"
+  ],
+  "author": "SkyOfDust",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/skyofdust/qrurl/issues"
+  },
+  "homepage": "https://scanforshare.com",
+  "dependencies": {
+  }
+}
