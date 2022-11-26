@@ -8,4 +8,5 @@ It works automatically on any web page and no additional configuration is needed
 
 To enable feature on your webpage, insert this in your html:
 
-`<script src="http://scanforshare.com/qr.min.js"></script>`
+`<link href="https://scanforshare.com/styles.min.css" integrity="sha384-lGiEIkh3JU+2dL+YdQIPvXAS+kMdpHp0jd13W/WrJy1w61uTfcTKUvMm/2bR5zRm" crossorigin="anonymous">`
+`<script src="https://scanforshare.com/qr.min.js" integrity="sha384-1M/cLgEFHkJrr7xyZhIVh4lVIevEWQjpqe/kvaVT2lCogTB9NMcFtAwYLmj0ll9a" crossorigin="anonymous"></script>`
