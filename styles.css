@@ -1,0 +1,43 @@
+#qrurl > img {
+    margin-left: auto;
+    margin-right: auto;
+    width: 64px;
+    height: 64px;
+}
+
+
+#qwurl {
+    all: initial;
+    z-index: 2147483647;
+    position: fixed;
+    right: 3px;
+    bottom: 3px;
+    background: rgba(255,255,255,0.6);
+    width: 74px;
+    height: 80px;
+    padding: 3px 3px 3px 3px;
+    border-radius: 10px;
+    border: 3px solid rgba(197, 197, 197, 0.9);
+    font-size:8px;
+    text-align: center;
+    transition: transform .2s;
+}
+
+#qwurl:hover {
+    transform: scale(2.5);
+    right: 67px;
+    bottom: 67px;
+}
+
+#qwurl > * {
+    all: initial;
+    transition: transform .2s;
+}
+
+#qtext {
+    display: flex;
+    justify-content: center;
+    font-size: 9px;
+    font-family: sans-serif;
+    transition: transform .2s;
+}

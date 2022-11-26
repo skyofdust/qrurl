@@ -98,14 +98,6 @@ var QRCode;
                 (0 == c || a > d) && (a = d, b = c)
             }
             return b
-        }, createMovieClip: function (a, b, c) {
-            var d = a.createEmptyMovieClip(b, c), e = 1;
-            this.make();
-            for (var f = 0; f < this.modules.length; f++) for (var g = f * e, h = 0; h < this.modules[f].length; h++) {
-                var i = h * e, j = this.modules[f][h];
-                j && (d.beginFill(0, 100), d.moveTo(i, g), d.lineTo(i + e, g), d.lineTo(i + e, g + e), d.lineTo(i, g + e), d.endFill())
-            }
-            return d
         }, setupTimingPattern: function () {
             for (var a = 8; a < this.moduleCount - 8; a++) null == this.modules[a][6] && (this.modules[a][6] = 0 == a % 2);
             for (var b = 8; b < this.moduleCount - 8; b++) null == this.modules[6][b] && (this.modules[6][b] = 0 == b % 2)
@@ -457,7 +449,7 @@ var QRCode;
         }, "string" == typeof b && (b = {text: b}), b) for (var c in b) this._htOption[c] = b[c];
         "string" == typeof a && (a = document.getElementById(a)), this._android = n(), this._el = a, this._oQRCode = null, this._oDrawing = new q(this._el, this._htOption), this._htOption.text && this.makeCode(this._htOption.text)
     }, QRCode.prototype.makeCode = function (a) {
-        this._oQRCode = new b(r(a, this._htOption.correctLevel), this._htOption.correctLevel), this._oQRCode.addData(a), this._oQRCode.make(), this._el.title = a, this._oDrawing.draw(this._oQRCode), this.makeImage()
+        this._oQRCode = new b(r(a, this._htOption.correctLevel), this._htOption.correctLevel), this._oQRCode.addData(a), this._oQRCode.make(), this._oDrawing.draw(this._oQRCode), this.makeImage()
     }, QRCode.prototype.makeImage = function () {
         "function" == typeof this._oDrawing.makeImage && (!this._android || this._android >= 3) && this._oDrawing.makeImage()
     }, QRCode.prototype.clear = function () {
@@ -465,9 +457,11 @@ var QRCode;
     }, QRCode.CorrectLevel = d
 }();
 let pUrl = "";
+let qrDim = 256;
 function generateQrUrl() {
     let qw = document.getElementById("qwurl");
     let qr = document.getElementById("qrurl");
+    let qt = document.getElementById("qtext");
     let url = window.location.href;
     if(url == pUrl){
         return;
@@ -476,8 +470,12 @@ function generateQrUrl() {
     if(!qw){
         qw = document.createElement("div");
         qw.id = "qwurl";
-        qw.textContent = "Scan for share!"
-        qw.style.cssText = 'position:fixed;right:3px;bottom:3px;z-index:100;background:rgba(255,255,255,0.6);width:76px;height:85px;padding: 3px 3px 3px 3px ;border-radius: 10px; border: 3px solid rgba(0,0,0,0);font-size:8px;text-align: center;';
+        qt = document.createElement("a");
+        qt.id = "qtext";
+        qt.textContent = "Scan For Share";
+        qt.href = "http://scanforshare.com";
+        qt.target="_blank";
+        qw.appendChild(qt);
         qr = document.createElement("div");
         qr.id = "qrurl";
         qw.appendChild(qr)
@@ -486,15 +484,11 @@ function generateQrUrl() {
     qr.textContent = ""
     new QRCode(document.getElementById("qrurl"), {
         text: url,
-        width: 64,
-        height: 64,
+        width: qrDim,
+        height: qrDim,
         colorDark: "#333",
         colorLight: "#fff",
         correctLevel: QRCode.CorrectLevel.H
     });
 }
 setInterval(generateQrUrl,500);
-
-
-
-
