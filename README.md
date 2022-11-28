@@ -6,4 +6,4 @@ It works automatically on any web page and no additional configuration is needed
 
 ### [Homepage](http://scanforshare.com)
 
-To enable feature on your webpage, import both `qrulr/qr.min.js` and `qrurl/styles.min.css` in your scripts and styles modules or directly in html.
+To enable feature on your webpage, import both `qrulr/qrurl.min.js` and `qrurl/styles.min.css` in your scripts and styles modules or directly in html.

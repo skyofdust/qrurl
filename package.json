@@ -1,6 +1,6 @@
 {
   "name": "qrurl",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "Generates qr code of the current page for quick share to other devices",
   "main": "qrurl.js",
   "scripts": {
